@@ -16,8 +16,7 @@ struct CircleLightView: View {
             .fill(color).brightness(alpha)
             .frame(width: 120)
             .overlay(Circle().stroke(Color.white, lineWidth: 6))
-            .shadow(radius: 10)
-            . padding(.bottom, 10)
+            .padding(.bottom, 10)
     }
 }
 
