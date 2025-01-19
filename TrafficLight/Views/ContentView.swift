@@ -37,10 +37,11 @@ struct ContentView: View {
                 RoundedRectangle(cornerRadius: 12, style: .continuous)
                     .stroke(Color.white, lineWidth: 6)
             )
-            .shadow(radius: 10)
             .padding(.bottom, 20)
         }
         .padding()
+        .containerRelativeFrame([.horizontal, .vertical])
+        .background(Color.black)
     }
 }
 
