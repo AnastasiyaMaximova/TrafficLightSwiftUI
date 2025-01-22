@@ -8,22 +8,21 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var redAlpha = 0.6
-    @State private var yellowAlpha = 0.6
-    @State private var greenAlpha = 0.6
+    @State private var redAlpha = 0.5
+    @State private var yellowAlpha = 0.5
+    @State private var greenAlpha = 0.5
     @State private var currentLight = CurrentLight.red
     @State private var buttonTitle = "START"
     
     var body: some View {
         VStack() {
-            CircleLightView(color: .red, alpha: redAlpha)
-            CircleLightView(color: .yellow, alpha: yellowAlpha)
-            CircleLightView(color: .green, alpha: greenAlpha)
+            CircleLightView(color: .red, opacity: redAlpha)
+            CircleLightView(color: .yellow, opacity: yellowAlpha)
+            CircleLightView(color: .green, opacity: greenAlpha)
             
             Spacer()
             
-            Button(action:{changeColor()})
-            {
+            Button(action: changeColor){
                 Text(buttonTitle)
                     .font(.largeTitle)
             }
@@ -58,11 +57,11 @@ extension ContentView {
     }
     
     private enum ChangeLight: Double {
-        case on = 0.0
-        case off = 0.6
+        case on = 1.0
+        case off = 0.5
     }
     
-    func changeColor() {
+    private func changeColor() {
         if buttonTitle == "START" {
             buttonTitle = "NEXT"
         }
